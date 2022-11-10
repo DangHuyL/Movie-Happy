@@ -1,0 +1,42 @@
+.Wrapper {
+    font-size: 1.6rem;
+    font-family: var(--font-family);
+    padding: 7px 10px;
+    border-radius: 4px;
+    color: var(--white);
+    background-color: var(--primary);
+    font-weight: 500;
+    cursor: pointer;
+
+    + .Wrapper {
+        margin-left: 20px;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+// button types
+.primary {
+    min-width: 72px;
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.outline {
+    padding: 7px 10px;
+    border: 2px solid var(--white);
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--white);
+    background-color: transparent;
+}
+
+.watch {
+    padding: 10px;
+    box-shadow: 0 8px 15px rgb(0 0 0 / 10%);
+    background-color: #34495e;
+}

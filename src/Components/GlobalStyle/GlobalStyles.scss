@@ -4,9 +4,11 @@
     // Default Layout
     --text-color: #161823;
     --white: #ffffff;
+    --primary: rgb(231, 76, 60);
+    --Header-hight: 62px;
 
     // Defaule layout
-    --font-family: 'ProximaNova';
+    --font-family: 'Netflix-San';
 }
 
 * {
@@ -40,25 +42,32 @@ a {
 
 // fonts emba
 @font-face {
-    font-family: ProximaNova;
-    src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-family: Netflix-San;
+    src: url('/assets/fonts/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw (1).woff2');
     font-weight: 400;
 }
 
 @font-face {
-    font-family: ProximaNova;
-    src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+    font-family: Netflix-San;
+    src: url('/assets/fonts/NetflixSans_W_Rg.woff2');
     font-weight: 600;
 }
 
 @font-face {
-    font-family: ProximaNova;
-    src: url('/assets/fonts/Proxima-Nova-Bold.woff');
+    font-family: Netflix-San;
+    src: url('/assets/fonts/download (1).woff');
     font-weight: 700;
 }
 
-@font-face {
-    font-family: Sofiapro;
-    src: url('/assets/fonts/sofiapro-bold.woff2');
-    font-weight: 700;
+// scroll bar
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: #e74c3c;
+    border-radius: 4px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #111;
 }
