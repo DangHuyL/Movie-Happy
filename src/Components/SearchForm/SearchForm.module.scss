@@ -1,0 +1,66 @@
+.Wrapper {
+    z-index: 1;
+    display: flex;
+    position: relative;
+    height: 45px;
+    width: 400px;
+    max-width: calc(100vw - 32px);
+    background-color: #111;
+    box-shadow: rgba(192, 185, 185, 0.12) 0px 2px 12px;
+    border-radius: 8px;
+}
+
+.close {
+    background-color: transparent;
+}
+
+.close,
+.loading {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100px;
+    font-size: 1.6rem;
+    color: rgb(154, 153, 153);
+}
+
+.loading {
+    animation: spinner 2s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+.input {
+    flex: 1;
+    font-size: 1.8rem;
+    color: var(--white);
+    height: 100%;
+    padding: 10px 40px 10px 10px;
+    background-color: transparent;
+}
+
+.btn-search {
+    margin: 2px;
+    min-width: 82px;
+    background-color: #222;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.PopperWrapper {
+    width: 400px;
+    max-width: calc(100vw - 32px);
+    height: 380px;
+    background: #222;
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
+    border-radius: 8px;
+    padding: 16px;
+    color: var(--white);
+    overflow-y: auto;
+}

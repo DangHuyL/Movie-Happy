@@ -1,0 +1,29 @@
+// .wraper-castItem {
+//     height: 300px;
+// }
+
+.avatar {
+    animation: skeleton 0.6s linear infinite alternate;
+    opacity: 0.7;
+    border-radius: 10px;
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.name {
+    font-size: 1.6rem;
+    color: var(--white);
+}
+
+// Mobile
+@media (max-width: 740px) {
+    .avatar {
+        height: 300px;
+    }
+}

@@ -1,0 +1,15 @@
+.wrapper {
+    z-index: 1;
+    display: flex;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.avatar {
+    width: 74px;
+}
+
+.movieName {
+    margin-left: 10px;
+    font-size: 1.6rem;
+}

@@ -1,0 +1,49 @@
+.overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.623);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+.Container {
+    width: 450px;
+    background-color: #636e72;
+    padding: 0 20px;
+    z-index: 12;
+    overflow-y: auto;
+}
+
+.Container::-webkit-scrollbar {
+    display: none;
+}
+.header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title,
+.close,
+.trailer-name {
+    color: var(--white);
+}
+.title {
+    font-size: 3rem;
+    font-weight: 500;
+}
+.close {
+    font-size: 3rem;
+    padding: 6px;
+}
+.Content {
+}
+.trailer-name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 10px 0px;
+}

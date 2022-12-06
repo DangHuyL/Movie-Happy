@@ -1,0 +1,29 @@
+.Wrapper {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://www.cantechletter.com/wp-content/uploads/Netflix.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    object-fit: cover;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.63);
+    }
+}
+
+// Responsive
+@media (max-width: 375px) {
+    .Wrapper {
+        height: 100%;
+    }
+}

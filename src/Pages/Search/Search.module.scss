@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    padding-top: 150px;
+    justify-content: center;
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    min-height: 100vh;
+
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/0ef67cc5-0aa7-47cf-87bd-7f595afc7cfb/80da7d5e-41c6-4cd6-8ec0-66c581faeb35/VN-vi-20221107-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-position: top;
+    background-size: cover;
+    object-fit: cover;
+}

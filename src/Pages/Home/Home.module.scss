@@ -1,0 +1,14 @@
+.container {
+    background-color: #333;
+}
+
+// responsive
+@media (max-width: 1023px) {
+    .banner {
+        display: none;
+    }
+
+    .container {
+        padding-top: var(--Header-hight);
+    }
+}

@@ -1,0 +1,98 @@
+.background {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    object-fit: cover;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: linear-gradient(
+            rgba(52, 73, 94, 0.2549019607843137),
+            #333 90%
+        );
+    }
+}
+
+.container {
+    z-index: 1;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+}
+
+.details-poster {
+    width: 300px;
+    height: 450px;
+    border-radius: 10px;
+}
+
+.details-content {
+    width: 68%;
+    color: var(--white);
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.descreption {
+    letter-spacing: 1.05px;
+}
+
+.release-date {
+    margin-top: 20px;
+}
+
+.amount {
+    margin-left: 15px;
+}
+
+.genres,
+.Watch {
+    margin: 20px 0px;
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+    .details-content {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .container {
+        flex-direction: column;
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 740px) {
+    .details-content {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .container {
+        flex-direction: column;
+        margin-top: 80px;
+    }
+
+    .Watch {
+        .mr {
+            margin-left: 0px;
+            margin-top: 20px;
+        }
+    }
+}

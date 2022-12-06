@@ -1,20 +1,3 @@
-.wrapper {
-    position: fixed;
-    top: 0px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: var(--Header-hight);
-    width: 100%;
-    padding: 10px;
-    background-color: #222;
-
-    &.sticky {
-        background-color: transparent;
-    }
-}
-
 .header-logo {
     display: flex;
 }

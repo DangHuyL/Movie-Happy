@@ -1,0 +1,8 @@
+.recaptcha-disclosure-text {
+    margin-top: 13px;
+    display: none;
+}
+
+.recaptcha-disclosure-text.display {
+    display: block;
+}

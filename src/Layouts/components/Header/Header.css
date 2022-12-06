@@ -1,0 +1,17 @@
+.wrapper {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--Header-hight);
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    transition: 0.7s;
+}
+
+.wrapper.sticky {
+    background-color: #222;
+}

@@ -18,6 +18,17 @@
     }
 }
 
+.icon + .title,
+.title + .icon {
+    margin-left: 10px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    font-size: 2rem;
+}
+
 // button types
 .primary {
     min-width: 72px;

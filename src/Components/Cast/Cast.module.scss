@@ -1,0 +1,33 @@
+.Wrapper {
+    color: var(--white);
+    background-color: #333;
+}
+
+.container {
+    width: 1200px;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+}
+
+.link-movie {
+    margin-left: 5px;
+    color: var(--primary);
+}
+
+// castItem
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.name {
+    font-size: 1.4rem;
+}
+
+.nick-name {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #f1c40f;
+}
