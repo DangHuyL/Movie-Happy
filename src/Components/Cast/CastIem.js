@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 import styles from './Cast.module.scss';
 import Images from '../Images/Images';
@@ -17,5 +18,9 @@ function CastItem({ data }) {
         </div>
     );
 }
+
+CastItem.propTypes = {
+    data: PropTypes.node.isRequired,
+};
 
 export default CastItem;

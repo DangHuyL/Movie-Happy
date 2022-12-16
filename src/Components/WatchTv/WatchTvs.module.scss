@@ -1,0 +1,104 @@
+.wrapper-video {
+    aspect-ratio: 16/9;
+    width: 912px;
+    max-width: calc(100% - 32px);
+}
+
+// TvInfor
+.Wrapper {
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.Title-Tv {
+    font-size: 3rem;
+    line-height: 40px;
+    margin: 10px 0px;
+}
+.Season-Tv,
+.Episode-Tv,
+.Overview-Tv,
+.AirDate-Tv {
+    margin: 12px 0px;
+}
+
+// Seasonitems
+.season-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: #222;
+    cursor: pointer;
+}
+
+.season-img {
+    width: 100%;
+    height: 100%;
+}
+
+.season-content {
+    flex: 1;
+    margin-bottom: 20px;
+    color: #fff;
+    background-color: #222;
+    padding: 10px;
+}
+
+// EspItem
+.Espt-wrapper {
+    cursor: pointer;
+    height: 66px;
+    width: 100%;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    &.active {
+        background-color: #e67e22;
+    }
+}
+
+.Esp-Img {
+    width: 116px;
+    height: 100%;
+}
+
+.Esp-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    color: #fff;
+    padding: 0px 10px;
+}
+
+.Esp-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+// Responsive
+@media (max-width: 1023px) {
+    .season-wrapper {
+        flex-direction: row;
+    }
+
+    .season-img {
+        width: 20%;
+    }
+
+    .season-content {
+        height: 100%;
+    }
+}
+
+@media (max-width: 740px) {
+    .season-img {
+        width: 30%;
+    }
+}

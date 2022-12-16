@@ -1,0 +1,44 @@
+.wrapper-watchTv {
+    background-color: #333;
+}
+
+.container-watchTv {
+    width: 1200px;
+    max-width: calc(100% - 32px);
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.content-watchTv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.WatchTv-video {
+    width: 78%;
+}
+
+.WatchTv-season {
+    width: 22%;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.WatchTv-semilar {
+    margin: 0px -16px;
+}
+
+// Responsive
+@media (max-width: 1023px) {
+    .content-watchTv {
+        display: block;
+    }
+
+    .WatchTv-video {
+        width: 100%;
+    }
+
+    .WatchTv-season {
+        width: 100%;
+    }
+}

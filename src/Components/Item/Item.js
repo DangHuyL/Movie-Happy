@@ -7,7 +7,7 @@ import Images from '../Images/Images';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
-function Item({ className, src, alt, name, to }) {
+function Item({ src, alt, name, to }) {
     return (
         <Link className={cx('wraper-castItem')} to={to}>
             <Images className={cx('avatar')} src={src} alt={alt} />

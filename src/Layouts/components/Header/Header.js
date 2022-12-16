@@ -7,24 +7,21 @@ import { useEffect, useRef } from 'react';
 import Button from '~/Components/Button';
 import config from '~/config';
 import styles from './Header.module.scss';
-import './Header.css';
 
 const cx = classNames.bind(styles);
 
 function Header() {
     const headerRef = useRef();
-
     useEffect(() => {
         const handleFixedHeader = () => {
             const header = headerRef.current;
-
             const sticky = header.offsetTop;
 
             if (header) {
                 if (window.pageYOffset > sticky) {
-                    header.classList.add('sticky');
+                    header.classList.add(cx('sticky'));
                 } else {
-                    header.classList.remove('sticky');
+                    header.classList.remove(cx('sticky'));
                 }
             }
         };
@@ -34,7 +31,7 @@ function Header() {
     }, []);
 
     return (
-        <div className="wrapper" ref={headerRef}>
+        <div className={cx('wrapper')} ref={headerRef}>
             <div className={cx('header-logo')}>
                 <Link to={config.routes.home} className={cx('logo')}>
                     <svg

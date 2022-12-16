@@ -1,5 +1,20 @@
 .container {
+    position: relative;
     background-color: #333;
+}
+
+.scroll-top {
+    border-radius: 50%;
+    position: fixed;
+    right: 30px;
+    bottom: 110px;
+    width: 50px;
+    height: 50px;
+}
+
+.btn-scroll {
+    border-radius: 50%;
+    font-size: 2.3rem;
 }
 
 // responsive

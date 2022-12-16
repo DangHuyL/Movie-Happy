@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import styles from './Details.module.scss';
 import '~/styles/grid.css';
 import Button from '~/Components/Button';
-import { BASE_URL, IMG_URL } from '~/utils/constans';
+import { API_KEY, BASE_URL, IMG_URL } from '~/utils/constans';
 import Cast from '~/Components/Cast';
 import Similar from '~/Components/Similar';
 import { addMovieLocal } from '~/utils/localStorage';
@@ -25,7 +25,7 @@ function DetailsMovie() {
     useEffect(() => {
         const fetch = async () => {
             const response = await axios.get(
-                `${BASE_URL}/${media_type}/${id}?api_key=c2d7e74ca48d88304696a254851ce44f`,
+                `${BASE_URL}/${media_type}/${id}?api_key=${API_KEY}`,
             );
             setData(response.data);
         };
@@ -100,8 +100,8 @@ function DetailsMovie() {
                                 watch
                                 to={
                                     media_type === 'tv'
-                                        ? `/watch/tv/${id}/season/1/esp/1`
-                                        : `/watch/movie/${id}`
+                                        ? `/watch/${media_type}/${id}/season/1/esp/1`
+                                        : `/watch/${media_type}/${id}`
                                 }
                             >
                                 Watch Now

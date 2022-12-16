@@ -10,7 +10,7 @@ import Button from '~/Components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleUp } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import { BASE_URL, IMG_URL } from '~/utils/constans';
+import { API_KEY, BASE_URL, IMG_URL } from '~/utils/constans';
 
 const cx = classNames.bind(styles);
 
@@ -24,9 +24,9 @@ function ViewMore() {
     useEffect(() => {
         let apiViewMore = '';
         if (type === 'trending') {
-            apiViewMore = `${BASE_URL}/trending/${media_type}/week?api_key=c2d7e74ca48d88304696a254851ce44f&page=${page}`;
+            apiViewMore = `${BASE_URL}/trending/${media_type}/week?api_key=${API_KEY}&page=${page}`;
         } else {
-            apiViewMore = `${BASE_URL}/${media_type}/${type}?api_key=c2d7e74ca48d88304696a254851ce44f&page=${page}`;
+            apiViewMore = `${BASE_URL}/${media_type}/${type}?api_key=${API_KEY}&page=${page}`;
         }
         if (apiViewMore) {
             const fetchApi = async () => {

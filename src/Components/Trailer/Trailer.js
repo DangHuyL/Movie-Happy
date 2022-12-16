@@ -4,7 +4,7 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { BASE_URL } from '~/utils/constans';
+import { BASE_URL, API_KEY } from '~/utils/constans';
 
 import styles from './Trailer.module.scss';
 
@@ -16,7 +16,7 @@ function Trailer({ show, setShow }) {
     useEffect(() => {
         const fetchApi = async () => {
             const response = await axios.get(
-                `${BASE_URL}/${media_type}/${id}/videos?api_key=c2d7e74ca48d88304696a254851ce44f`,
+                `${BASE_URL}/${media_type}/${id}/videos?api_key=${API_KEY}`,
             );
             setData(response.data.results);
         };
