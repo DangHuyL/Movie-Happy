@@ -5,8 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './Components/GlobalStyle/GlobalStyles';
 import { ToastContainer } from 'react-toastify';
 
-import './styles/responsive.module.css';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>

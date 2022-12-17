@@ -6,6 +6,7 @@ import { getMovieHistory } from '~/utils/localStorage';
 import React, { useMemo } from 'react';
 import MovieList from '~/Components/List/MovieList';
 import TvList from '~/Components/List/TvList';
+
 const cx = classNames.bind(styles);
 
 function Home() {

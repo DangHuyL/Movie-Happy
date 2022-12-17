@@ -11,7 +11,6 @@ import styles from './LoginForm.module.scss';
 import './LoginForm.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 const cx = classNames.bind(styles);
 function LoginForm() {

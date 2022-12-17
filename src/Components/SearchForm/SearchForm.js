@@ -9,6 +9,7 @@ import Button from '../Button';
 import style from './SearchForm.module.scss';
 import MovieItem from '../MovieItem';
 import useDebounce from '~/Components/hooks/useDebounced';
+import { BASE_URL, IMG_URL, API_KEY } from '~/utils/constans';
 
 const cx = classNames.bind(style);
 
@@ -27,7 +28,7 @@ function SearchForm() {
             try {
                 setLoading(true);
                 const response = await axios.get(
-                    `https://api.themoviedb.org/3/search/multi?api_key=c2d7e74ca48d88304696a254851ce44f`,
+                    `${BASE_URL}/search/multi?api_key=${API_KEY}`,
                     {
                         params: {
                             query: debounce,

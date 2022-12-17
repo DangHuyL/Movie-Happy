@@ -1,5 +1,6 @@
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleUp } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
@@ -7,24 +8,31 @@ import { useEffect, useRef } from 'react';
 import Button from '~/Components/Button';
 import config from '~/config';
 import styles from './Header.module.scss';
-import './Header.css';
 
 const cx = classNames.bind(styles);
 
 function Header() {
+    const handleScrollTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
     const headerRef = useRef();
-
+    const scrollBtnRef = useRef();
     useEffect(() => {
         const handleFixedHeader = () => {
+            const scroll = scrollBtnRef.current;
             const header = headerRef.current;
-
             const sticky = header.offsetTop;
 
             if (header) {
                 if (window.pageYOffset > sticky) {
-                    header.classList.add('sticky');
+                    header.classList.add(cx('sticky'));
+                    scroll.classList.remove(cx('display'));
                 } else {
-                    header.classList.remove('sticky');
+                    header.classList.remove(cx('sticky'));
+                    scroll.classList.add(cx('display'));
                 }
             }
         };
@@ -34,7 +42,7 @@ function Header() {
     }, []);
 
     return (
-        <div className="wrapper" ref={headerRef}>
+        <div className={cx('wrapper')} ref={headerRef}>
             <div className={cx('header-logo')}>
                 <Link to={config.routes.home} className={cx('logo')}>
                     <svg
@@ -62,6 +70,11 @@ function Header() {
                 </Link>
                 <Button to={config.routes.login} primary>
                     Sign in
+                </Button>
+            </div>
+            <div className={cx('scroll-top')} ref={scrollBtnRef}>
+                <Button onClick={handleScrollTop} className={cx('btn-scroll')}>
+                    <FontAwesomeIcon icon={faArrowCircleUp} />
                 </Button>
             </div>
         </div>

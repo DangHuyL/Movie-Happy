@@ -9,7 +9,7 @@ import useInnerWidths from '../hooks/useInnerWidths';
 import styles from './List.module.scss';
 import Title from '../Title';
 import Button from '../Button';
-import { BASE_URL, IMG_URL } from '~/utils/constans';
+import { BASE_URL, IMG_URL, API_KEY } from '~/utils/constans';
 import Item from '../Item';
 
 const cx = classNames.bind(styles);
@@ -19,17 +19,17 @@ function MovieList({ type, media_type }) {
         const fetchApi = async () => {
             if (type === 'trending') {
                 const response = await axios.get(`
-                ${BASE_URL}/trending/${media_type}/day?api_key=c2d7e74ca48d88304696a254851ce44f`);
+                ${BASE_URL}/trending/${media_type}/day?api_key=${API_KEY}`);
                 setMovie(response.data.results);
             } else {
                 const response = await axios.get(
-                    `${BASE_URL}/${media_type}/${type}?api_key=c2d7e74ca48d88304696a254851ce44f`,
+                    `${BASE_URL}/${media_type}/${type}?api_key=${API_KEY}`,
                 );
                 setMovie(response.data.results);
             }
         };
         fetchApi();
-    }, [type]);
+    }, [media_type, type]);
     SwiperCore.use([Navigation]);
     const width = useInnerWidths();
     let item;

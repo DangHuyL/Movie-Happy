@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 import Button from '../Button';
 import styles from './Banner.module.scss';
-import { IMG_URL } from '~/utils/constans';
+import { IMG_URL, BASE_URL, API_KEY } from '~/utils/constans';
 
 const cx = classNames.bind(styles);
 
@@ -13,8 +13,11 @@ function Banner() {
     useEffect(() => {
         const fetch = async () => {
             const response = await axios.get(
-                'https://api.themoviedb.org/3/trending/all/day?api_key=c2d7e74ca48d88304696a254851ce44f',
+                `${BASE_URL}/trending/all/day?api_key=${API_KEY}`,
             );
+
+            /*Create randomly an integer from 0 to 20
+             Math.ramdom() *(max-min) + min */
             const random = Math.floor(Math.random() * 20 + 0);
 
             setBanner(response.data.results[random]);
@@ -26,7 +29,7 @@ function Banner() {
         <div
             className={cx('background')}
             style={{
-                backgroundImage: `url(https://image.tmdb.org/t/p/original${banner?.backdrop_path})`,
+                backgroundImage: `url(${IMG_URL}${banner?.backdrop_path})`,
             }}
         >
             <div className={cx('Banner-content')}>
@@ -39,7 +42,7 @@ function Banner() {
                             watch
                             to={
                                 banner.media_type === 'tv'
-                                    ? `/watch/tv/${banner.id}/season/1/esp/1`
+                                    ? `/watch/${banner.media_type}/${banner.id}/season/1/esp/1`
                                     : `/watch/movie/${banner.id}`
                             }
                         >

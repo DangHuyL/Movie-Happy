@@ -9,7 +9,7 @@ import axios from 'axios';
 
 import Title from '../Title';
 import styles from './Similar.module.scss';
-import { BASE_URL, IMG_URL } from '~/utils/constans';
+import { BASE_URL, IMG_URL, API_KEY } from '~/utils/constans';
 import Item from '../Item';
 import useInnerWidths from '../hooks/useInnerWidths';
 
@@ -35,11 +35,10 @@ function Similar() {
     useEffect(() => {
         const fetchApi = async () => {
             const response = await axios.get(
-                `${BASE_URL}/${media_type}/${id}/similar?api_key=c2d7e74ca48d88304696a254851ce44f`,
+                `${BASE_URL}/${media_type}/${id}/similar?api_key=${API_KEY}`,
             );
             setSimilar(response.data.results.slice(0, 20));
         };
-        console.log(similar);
         fetchApi();
     }, [media_type, id]);
 
