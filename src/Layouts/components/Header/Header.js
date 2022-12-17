@@ -1,5 +1,6 @@
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleUp } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
@@ -11,17 +12,27 @@ import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
 
 function Header() {
+    const handleScrollTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
     const headerRef = useRef();
+    const scrollBtnRef = useRef();
     useEffect(() => {
         const handleFixedHeader = () => {
+            const scroll = scrollBtnRef.current;
             const header = headerRef.current;
             const sticky = header.offsetTop;
 
             if (header) {
                 if (window.pageYOffset > sticky) {
                     header.classList.add(cx('sticky'));
+                    scroll.classList.remove(cx('display'));
                 } else {
                     header.classList.remove(cx('sticky'));
+                    scroll.classList.add(cx('display'));
                 }
             }
         };
@@ -59,6 +70,11 @@ function Header() {
                 </Link>
                 <Button to={config.routes.login} primary>
                     Sign in
+                </Button>
+            </div>
+            <div className={cx('scroll-top')} ref={scrollBtnRef}>
+                <Button onClick={handleScrollTop} className={cx('btn-scroll')}>
+                    <FontAwesomeIcon icon={faArrowCircleUp} />
                 </Button>
             </div>
         </div>
